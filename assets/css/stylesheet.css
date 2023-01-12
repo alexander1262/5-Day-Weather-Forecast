@@ -1,0 +1,53 @@
+.cityDisplay {
+    background-color: aqua;
+    font-size: 30px;
+    border: 10px solid rgb(83, 83, 83);
+    display: block;
+    font-family: 'Lato', sans-serif;
+    color: white;
+    text-shadow: 1px 1px black;
+    padding: 3px;
+    width: 350px;
+    height: 70px;
+    margin: auto;
+    text-align: center;
+}
+
+.currentWeather {
+    font-size: 24px;
+    background-color: aqua;
+    border: 30px solid rgb(83, 83, 83);
+    text-align: center;
+    display: block;
+    text-shadow: 1px 1px black;
+    color: white;
+    font-family: 'Lato', sans-serif;
+    width: 500px;
+    margin: auto;
+}
+.forecastWeather {
+    font-size: 14px;
+    background-color: aqua;
+    border: 10px solid rgb(83, 83, 83);
+    display: flex;
+    width: 20%;
+    justify-items: auto;
+    color: white;
+    font-family: 'Lato', sans-serif;
+    text-shadow: 1px 1px black;
+    float: left;
+}
+
+.weatherDetails {
+    text-align: center;
+    width: 400px;
+    height: 250px;
+}
+
+.giantHeader {
+    text-align: center;
+    background-color: rgb(37, 37, 37);
+    color: white;
+    margin: auto;
+}
+
