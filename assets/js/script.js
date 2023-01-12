@@ -11,9 +11,6 @@ var humidityCity = document.querySelector('#humidity')
 var dateCity = document.querySelector('.date')
 var currentCitySearched = document.querySelector('.currentCitySearched')
 
-// console.log(city);
-
-
 function getWeatherForecast() {
     console.log('works');
     fetchAPI();
@@ -25,22 +22,12 @@ function fetchAPI(){
     console.log(city.val());
     const weatherUrl = "https://api.openweathermap.org/data/2.5/weather?q=" + city.val() + "&appid=" + key;
     console.log("URL: ", weatherUrl)
- //   const response = fetch(weatherUrl);
- //   console.log(response)
     fetch(weatherUrl)
         .then(response => {
-           // console.log(response);
             return response.json();
         })
         .then(data => {
             console.log(data);
-
-            // Let's Pull apart the DATA OBJECT
-            
-
-            // make second API request
-
-
         })
         .catch(error => {
             console.log(error);
@@ -51,7 +38,6 @@ function fetchAPI(){
 function getCoords(cityName) {
     fetch(`https://geocode.maps.co/search?q=${cityName}`)
     .then(response => {
-       // console.log(response);
         return response.json();
     })
     .then(data => {
@@ -66,7 +52,6 @@ function getCoords(cityName) {
 
         fetch(forcastUrl )
             .then(response => {
-              //  console.log(response);
                 return response.json();
             })
             .then(data => {
@@ -128,7 +113,7 @@ function getCoords(cityName) {
                     humidityCityThree.textContent = "Humidity: " + data.list[36].main.humidity + " %"
 
                     var dateFour = document.querySelector('.date4')
-                    dateFour.textContent = "Date: " + data.list[40].dt_txt
+                    dateFour.textContent = "Date: " + data.list[39].dt_txt
             })
             .catch(error => {
                 console.log(error);
