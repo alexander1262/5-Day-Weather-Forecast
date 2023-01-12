@@ -1,3 +1,4 @@
+// Created all variables and consts needed for the assignment
 const mapLocation = document.getElementsByClassName('forecast-content-overview');
 const locationTemp = document.getElementsByClassName('forecast-content-temp');
 const forecastOverview = document.getElementsByClassName('component-forecast-box');
@@ -11,13 +12,13 @@ var humidityCity = document.querySelector('#humidity')
 var dateCity = document.querySelector('.date')
 var currentCitySearched = document.querySelector('.currentCitySearched')
 
+// created the function that runs from button click that calls fetchAPI and displays the city searched
 function getWeatherForecast() {
-    console.log('works');
     fetchAPI();
     getCoords(city.val())
     currentCitySearched.textContent = "City: " + city.val()
 }
-
+// fetchAPI function that fetches the weather URL for the city with our API key
 function fetchAPI(){
     console.log(city.val());
     const weatherUrl = "https://api.openweathermap.org/data/2.5/weather?q=" + city.val() + "&appid=" + key;
@@ -34,7 +35,7 @@ function fetchAPI(){
         });
 
 }
-
+// uses lat and lon to find the city and location then populates our HTML with the object elements
 function getCoords(cityName) {
     fetch(`https://geocode.maps.co/search?q=${cityName}`)
     .then(response => {
@@ -115,6 +116,7 @@ function getCoords(cityName) {
                     var dateFour = document.querySelector('.date4')
                     dateFour.textContent = "Date: " + data.list[39].dt_txt
             })
+            //console logs any errors
             .catch(error => {
                 console.log(error);
             });
@@ -125,5 +127,5 @@ function getCoords(cityName) {
         console.log(error);
     })
 }
-
+// submit button function
 $('#submitBtn').on("click", getWeatherForecast);
